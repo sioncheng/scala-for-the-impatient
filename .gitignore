@@ -1,0 +1,7 @@
+i.DS_Store
+.idea
+.idea/
+.settings
+.scala_dependencies
+target
+*.tmproj
