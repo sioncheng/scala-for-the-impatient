@@ -24,4 +24,6 @@ object MainApp extends App {
     println(what.map(x => x.toUpper))
     println(what.containsSlice('a'.to('d')))
     println(what.containsSlice('w'.to('w')))
+    println(what.head)
+    println(what.last)
 }
