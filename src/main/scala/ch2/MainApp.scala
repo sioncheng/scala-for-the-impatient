@@ -1,5 +1,7 @@
 package ch2
 
+import scala.annotation.tailrec
+
 /**
   * Created by cyq on 26/07/2017.
   */
@@ -118,6 +120,25 @@ object MainApp extends App {
     }
     println(sum(1,2,3,4,5))
     println(sum(1 to 5: _*))
+
+    def recursiveSum(args: Int*): Int = {
+        if (args.length == 0)  0
+        else args.head +  recursiveSum(args.tail:  _*)
+    }
+    println(recursiveSum(1,2,3,4,5))
+
+
+    def tailRecursiveSum(args: Int*): Int = {
+        @tailrec
+        def innerSum(argList: List[Int], acc: Int = 0): Int = {
+            if (argList.length == 0) acc
+            else innerSum(argList.tail, acc + argList.head)
+        }
+        innerSum(args.toList)
+    }
+    println(tailRecursiveSum(1,2,3,4,5))
+
+
 
 }
 
