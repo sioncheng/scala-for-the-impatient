@@ -139,6 +139,46 @@ object MainApp extends App {
     println(tailRecursiveSum(1,2,3,4,5))
 
 
+    def boxPrint(s: String): Unit = {
+        val border = "-" * (s.length + 2)
+        print(f"$border%n|$s|%n$border%n")
+    }
+
+    def boxFormat(s: String) = {
+        val border = "-" * (s.length + 2)
+        val line = "\r\n"
+        border + line + "|" + s + "|" + line + border + line
+    }
+
+    boxPrint("hello")
+    println(boxFormat("hello"))
+
+    def getInt(): Int = {
+        println("getInt")
+        100
+    }
+
+    val gi = getInt
+    lazy val lgi = getInt
+    println("after lazy val lgi = getInt")
+    println(lgi)
+
+    def div(a: Int, b:Int) = a / b
+    try {
+        println(div(1,2))
+    } catch {
+        case ex: Any => ex.printStackTrace()
+    } finally {
+        println("finally")
+    }
+
+    try {
+        println(div(1,0))
+    } catch {
+        case ex: Any => ex.printStackTrace()
+    } finally {
+        println("finally")
+    }
 
 }
 
