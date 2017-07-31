@@ -67,7 +67,7 @@ object MainApp extends App {
 
     def runInThreadAnother(block: ()=> Unit): Unit = {
         new Thread{
-            override def run(): Unit = block
+            override def run(): Unit = { block() }
         }.start()
     }
 
