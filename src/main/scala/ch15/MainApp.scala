@@ -25,7 +25,7 @@ object MainApp extends App {
     )
 
     @SerialVersionUID(1L)
-    class Credentials(var username: String, var password: String) with Serializable
+    class Credentials(var username: String, var password: String) extends Serializable
 
     class Book {
         @throws(classOf[IllegalArgumentException]) def read(){}
